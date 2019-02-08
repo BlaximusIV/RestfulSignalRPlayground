@@ -45,13 +45,12 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.lblID = new System.Windows.Forms.Label();
             this.radNew = new System.Windows.Forms.RadioButton();
-            this.radRadioButton1 = new Telerik.WinControls.UI.RadRadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingTestData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radRadioButton1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -190,23 +189,26 @@
             this.radNew.Text = "New";
             this.radNew.UseVisualStyleBackColor = true;
             // 
-            // radRadioButton1
-            // 
-            this.radRadioButton1.Location = new System.Drawing.Point(59, 6);
-            this.radRadioButton1.Name = "radRadioButton1";
-            this.radRadioButton1.Size = new System.Drawing.Size(57, 18);
-            this.radRadioButton1.TabIndex = 15;
-            this.radRadioButton1.Text = "Update";
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.radNew);
-            this.groupBox1.Controls.Add(this.radRadioButton1);
             this.groupBox1.Location = new System.Drawing.Point(122, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(131, 38);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(59, 5);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(60, 17);
+            this.radioButton1.TabIndex = 15;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Update";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // FormTest
             // 
@@ -235,7 +237,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingTestData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radRadioButton1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -261,8 +262,8 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.RadioButton radNew;
-        private Telerik.WinControls.UI.RadRadioButton radRadioButton1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
 

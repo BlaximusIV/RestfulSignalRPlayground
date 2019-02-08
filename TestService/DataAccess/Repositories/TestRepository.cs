@@ -41,8 +41,8 @@ namespace TestService.DataAccess.Repositories
         /// Updates a specific model in the repository
         /// </summary>
         /// <param name="model"></param>
-        public void UpdateModel(TestModel model) => 
-            _testModels.Find(m => m.ID == model.ID)
+        public void UpdateModel(TestModel model) => _testModels
+            .Find(m => m.ID == model.ID)
             .Update(model);
 
         /// <summary>

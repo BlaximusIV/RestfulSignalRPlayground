@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28306.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestLanguageFeatures", "TestLanguageFeatures\TestLanguageFeatures.csproj", "{02B3EE89-A4EE-4664-86A2-B6A8D6ABA1E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConsole", "TestConsole\TestConsole.csproj", "{02B3EE89-A4EE-4664-86A2-B6A8D6ABA1E5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestService", "TestService\TestService.csproj", "{A3822EEA-EB86-44CA-B99B-EAF010F4A404}"
 EndProject
@@ -11,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestService.Tests", "TestSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFormGUI", "TestFormGUI\TestFormGUI.csproj", "{A52138D9-3459-410E-AE03-5FAC4A89FEC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBusinessLogic", "TestBusinessLogic\TestBusinessLogic.csproj", "{5311BDE5-9A5B-4467-B60A-43429127D435}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBusinessLogic", "TestBusinessLogic\TestBusinessLogic.csproj", "{5311BDE5-9A5B-4467-B60A-43429127D435}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serializer", "Serializer\Serializer.csproj", "{498B503E-714A-4069-ABA1-F9D7DF58C6D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{5311BDE5-9A5B-4467-B60A-43429127D435}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5311BDE5-9A5B-4467-B60A-43429127D435}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5311BDE5-9A5B-4467-B60A-43429127D435}.Release|Any CPU.Build.0 = Release|Any CPU
+		{498B503E-714A-4069-ABA1-F9D7DF58C6D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{498B503E-714A-4069-ABA1-F9D7DF58C6D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{498B503E-714A-4069-ABA1-F9D7DF58C6D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{498B503E-714A-4069-ABA1-F9D7DF58C6D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

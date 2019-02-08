@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net.Http;
 using System.Windows.Forms;
 
 namespace TestFormGUI
 {
     public partial class FormTest : Form
     {
+        private static readonly HttpClient _client = new HttpClient();
+
         public FormTest()
         {
             InitializeComponent();
@@ -20,7 +16,7 @@ namespace TestFormGUI
 
         private void InitializeData()
         {
-            throw new NotImplementedException();
+
         }
 
         private void btnGetAll_Click(object sender, EventArgs e)
@@ -34,6 +30,20 @@ namespace TestFormGUI
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                clearInput();
+            }
+            catch
+            {
+
+            }
+
+        }
+
+        private void clearInput()
         {
 
         }

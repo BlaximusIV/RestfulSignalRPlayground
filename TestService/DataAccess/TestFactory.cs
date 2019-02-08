@@ -11,7 +11,7 @@ namespace TestService.DataAccess
     /// </summary>
     public static class TestFactory
     {
-        private static readonly Random random = new Random();
+        private static readonly Random _random = new Random();
 
         /// <summary>
         /// Generates a variable-length list of TestModels
@@ -35,7 +35,7 @@ namespace TestService.DataAccess
         /// <param name="max"></param>
         /// <returns></returns>
         private static int buildRandomInt(int min = 0, int max = 50) =>
-            random.Next(min, max);
+            _random.Next(min, max);
 
         /// <summary>
         /// Returns a random character from the ascii values between 0-Z
