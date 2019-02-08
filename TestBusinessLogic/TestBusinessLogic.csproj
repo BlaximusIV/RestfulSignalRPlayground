@@ -12,4 +12,8 @@
     <PackageReference Include="protobuf-net" Version="2.0.0.480" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Serializer\Serializer.csproj" />
+  </ItemGroup>
+
 </Project>
