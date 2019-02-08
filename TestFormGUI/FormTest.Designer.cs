@@ -60,9 +60,9 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.DataSource = this.bindingTestData;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 176);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 175);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(253, 184);
+            this.dataGridView1.Size = new System.Drawing.Size(355, 184);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnGetAll
@@ -137,7 +137,7 @@
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(4, 105);
+            this.lblPhone.Location = new System.Drawing.Point(122, 66);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(78, 13);
             this.lblPhone.TabIndex = 11;
@@ -145,15 +145,15 @@
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(7, 121);
+            this.maskedTextBox1.Location = new System.Drawing.Point(125, 82);
             this.maskedTextBox1.Mask = "(999) 000-0000";
             this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox1.Size = new System.Drawing.Size(120, 20);
             this.maskedTextBox1.TabIndex = 12;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(170, 118);
+            this.btnSubmit.Location = new System.Drawing.Point(7, 108);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 13;
@@ -214,7 +214,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(253, 360);
+            this.ClientSize = new System.Drawing.Size(355, 359);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.maskedTextBox1);
