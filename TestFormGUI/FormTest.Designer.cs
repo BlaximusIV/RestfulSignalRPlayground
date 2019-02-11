@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.gridModels = new System.Windows.Forms.DataGridView();
             this.bindingTestData = new System.Windows.Forms.BindingSource(this.components);
             this.btnGetAll = new System.Windows.Forms.Button();
             this.btnGetID = new System.Windows.Forms.Button();
@@ -47,23 +48,44 @@
             this.radNew = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gridModels)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingTestData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // gridModels
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.bindingTestData;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 175);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(355, 184);
-            this.dataGridView1.TabIndex = 0;
+            this.gridModels.AllowUserToAddRows = false;
+            this.gridModels.AllowUserToDeleteRows = false;
+            this.gridModels.AllowUserToOrderColumns = true;
+            this.gridModels.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.gridModels.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridModels.AutoGenerateColumns = false;
+            this.gridModels.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridModels.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.firstNameDataGridViewTextBoxColumn,
+            this.lastNameDataGridViewTextBoxColumn,
+            this.phoneNumberDataGridViewTextBoxColumn});
+            this.gridModels.DataSource = this.bindingTestData;
+            this.gridModels.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gridModels.Location = new System.Drawing.Point(0, 175);
+            this.gridModels.Name = "gridModels";
+            this.gridModels.RowHeadersVisible = false;
+            this.gridModels.Size = new System.Drawing.Size(355, 184);
+            this.gridModels.TabIndex = 0;
+            // 
+            // bindingTestData
+            // 
+            this.bindingTestData.DataSource = typeof(TestBusinessLogic.Models.TestModel);
             // 
             // btnGetAll
             // 
@@ -210,6 +232,30 @@
             this.radioButton1.Text = "Update";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
+            // phoneNumberDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,11 +275,11 @@
             this.Controls.Add(this.num);
             this.Controls.Add(this.btnGetID);
             this.Controls.Add(this.btnGetAll);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gridModels);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormTest";
             this.Text = "Test";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridModels)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingTestData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -246,7 +292,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridModels;
         private System.Windows.Forms.BindingSource bindingTestData;
         private System.Windows.Forms.Button btnGetAll;
         private System.Windows.Forms.Button btnGetID;
@@ -264,6 +310,10 @@
         private System.Windows.Forms.RadioButton radNew;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
     }
 }
 

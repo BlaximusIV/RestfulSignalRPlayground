@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNet.SignalR.Client;
 using System;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestBusinessLogic.API_Consumption.TestServiceREST;
+using TestBusinessLogic.Models;
 
 namespace TestFormGUI
 {
@@ -10,9 +13,11 @@ namespace TestFormGUI
         // Set the hub values before continuing.
         // The hub could potentially be injected, but this is a small application, so I don't feel it necessary.
         private const string _hubURI = "";
-        private const string _hubName = "";
+        private const string _hubName = "Test";
         private static readonly HubConnection _connection = new HubConnection(_hubURI);
         private static readonly IHubProxy _hub = _connection.CreateHubProxy(_hubName);
+
+        private BindingList<TestModel> gridData = new BindingList<TestModel>();
 
 
 
@@ -35,14 +40,9 @@ namespace TestFormGUI
         }
 
 
-        private async void InitializeData()
-        {
-        }
+        private async void InitializeData() => await getAllData();
 
-        private void btnGetAll_Click(object sender, EventArgs e)
-        {
-
-        }
+        private async void btnGetAll_Click(object sender, EventArgs e) =>  await getAllData();
 
         private void btnGetID_Click(object sender, EventArgs e)
         {
@@ -67,5 +67,8 @@ namespace TestFormGUI
         {
 
         }
+
+        private async Task getAllData() =>
+            gridData = new BindingList<TestModel>(await RESTClient.Instance.GetTestModelsAsync());
     }
 }

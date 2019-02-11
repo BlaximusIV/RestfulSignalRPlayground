@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using TestBusinessLogic.Models;
@@ -21,7 +22,7 @@ namespace TestBusinessLogic.API_Consumption.TestServiceREST
             get
             {
                 if (null == _instance)
-                    _instance.Configure();
+                    Configure();
 
                 return _instance;
             }
@@ -33,7 +34,7 @@ namespace TestBusinessLogic.API_Consumption.TestServiceREST
         private HttpClient _client;
         // Change beforehand
         private const string serviceURI = "http://localhost:2681";
-        private const string testAPI = "api/TestController";
+        private const string testAPI = "api/Test";
         #endregion
 
         #region Public Methods
@@ -45,14 +46,14 @@ namespace TestBusinessLogic.API_Consumption.TestServiceREST
             {
                 HttpResponseMessage response = await _client.GetAsync(testAPI);
                 if (response.IsSuccessStatusCode)
-                    returnModels = Serializer.Serializer
-                        .DeserializeProtoObjects<TestModel>(
-                            await response.Content.ReadAsByteArrayAsync())
-                        .ToList();
-                else
                 {
-                    throwCommunicationException(response.StatusCode);
+                    byte[] data = await response.Content.ReadAsByteArrayAsync();
+                    returnModels = Serializer.Serializer
+                        .DeserializeProtoObjects<TestModel>(data)
+                        .ToList();
                 }
+                else
+                    throwCommunicationException(response.StatusCode);
             }
             catch(Exception ex)
             {
@@ -64,7 +65,7 @@ namespace TestBusinessLogic.API_Consumption.TestServiceREST
         #endregion
 
         #region Private Methods
-        private void Configure()
+        private static void Configure()
         {
             // Instantiate the instance
             _instance = new RESTClient();
@@ -74,7 +75,7 @@ namespace TestBusinessLogic.API_Consumption.TestServiceREST
             client.BaseAddress = new Uri(serviceURI);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
-                new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/x-protobuf"));
+                new MediaTypeWithQualityHeaderValue("application/x-protobuf"));
 
             _instance._client = client;
         }
