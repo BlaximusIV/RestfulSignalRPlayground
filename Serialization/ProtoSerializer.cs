@@ -1,41 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Newtonsoft.Json;
 using ProtoBuf;
 
-namespace Serializer
+namespace Serialization
 {
-    public static class Serializer
+    /// <summary>
+    /// A simple abstraction for using the protobuf-net serializer.
+    /// </summary>
+    public static class ProtoSerializer
     {
-        #region Fields
-        private static readonly JsonSerializerSettings settings = new JsonSerializerSettings()
-        {
-            TypeNameHandling = TypeNameHandling.All,
-            DateParseHandling = DateParseHandling.DateTime,
-            Formatting = Formatting.Indented
-        };
-        #endregion
-
-        #region Public Methods
-
-        #region JSON Serialization
-        public static T DeserializeJSON<T>(string data) => 
-            JsonConvert.DeserializeObject<T>(data, settings);
-
-        //public IEnumerable<T> DeserializeJSONObjects<T>(string objectStrings) =>
-        //    JsonConvert.DeserializeObject<IEnumerable<T>>(objectStrings, settings);
-
-        public static string SerializeJSON<T>(T objectReference) =>
-            JsonConvert.SerializeObject(objectReference, settings);
-
-        //public string SerializeJSON<T>(IEnumerable<T> objectReferences) =>
-        //    JsonConvert.SerializeObject(objectReferences, settings);
-        #endregion
-
-        #region Protobuf Serialization
         // This serialization strategy can be found at https://www.c-sharpcorner.com/article/serialization-and-deserialization-ib-c-sharp-using-protobuf-dll/
-        public static T DeserializeProto<T>(byte[] data) where T : class
+        public static T Deserialize<T>(byte[] data) where T : class
         {
             if (null == data)
                 return null;
@@ -55,7 +31,7 @@ namespace Serializer
             }
         }
 
-        public static IEnumerable<T> DeserializeProtoObjects<T>(byte[] data)
+        public static IEnumerable<T> DeserializeCollection<T>(byte[] data)
         {
             if (null == data)
                 return null;
@@ -75,7 +51,7 @@ namespace Serializer
             }
         }
 
-        public static byte[] SerializeProto<T>(T objectReference)
+        public static byte[] Serialize<T>(T objectReference)
         {
             if (null == objectReference)
                 return null;
@@ -94,9 +70,9 @@ namespace Serializer
             }
         }
 
-        public static byte[] SerializeProto<T>(IEnumerable<T> objectReferences)
+        public static byte[] Serialize<T>(IEnumerable<T> objectReferences)
         {
-            if(null == objectReferences)
+            if (null == objectReferences)
                 return null;
 
             try
@@ -112,8 +88,5 @@ namespace Serializer
                 throw;
             }
         }
-        #endregion
-
-        #endregion
     }
 }

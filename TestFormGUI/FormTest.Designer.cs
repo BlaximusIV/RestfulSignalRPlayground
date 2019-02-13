@@ -29,34 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gridModels = new System.Windows.Forms.DataGridView();
-            this.bindingTestData = new System.Windows.Forms.BindingSource(this.components);
-            this.btnGetAll = new System.Windows.Forms.Button();
-            this.btnGetID = new System.Windows.Forms.Button();
-            this.num = new System.Windows.Forms.NumericUpDown();
-            this.lblIntro = new System.Windows.Forms.Label();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.lblID = new System.Windows.Forms.Label();
-            this.radNew = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingTestData = new System.Windows.Forms.BindingSource(this.components);
+            this.btnGetAll = new System.Windows.Forms.Button();
+            this.btnGetID = new System.Windows.Forms.Button();
+            this.num = new System.Windows.Forms.NumericUpDown();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.txtPhone = new System.Windows.Forms.MaskedTextBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.lblIntro = new System.Windows.Forms.Label();
+            this.lblRetreiving = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridModels)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingTestData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridModels
@@ -65,10 +59,11 @@
             this.gridModels.AllowUserToDeleteRows = false;
             this.gridModels.AllowUserToOrderColumns = true;
             this.gridModels.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            this.gridModels.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            this.gridModels.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.gridModels.AutoGenerateColumns = false;
+            this.gridModels.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridModels.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridModels.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
@@ -77,160 +72,11 @@
             this.phoneNumberDataGridViewTextBoxColumn});
             this.gridModels.DataSource = this.bindingTestData;
             this.gridModels.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridModels.Location = new System.Drawing.Point(0, 175);
+            this.gridModels.Location = new System.Drawing.Point(0, 113);
             this.gridModels.Name = "gridModels";
             this.gridModels.RowHeadersVisible = false;
-            this.gridModels.Size = new System.Drawing.Size(355, 184);
+            this.gridModels.Size = new System.Drawing.Size(598, 184);
             this.gridModels.TabIndex = 0;
-            // 
-            // bindingTestData
-            // 
-            this.bindingTestData.DataSource = typeof(TestBusinessLogic.Models.TestModel);
-            // 
-            // btnGetAll
-            // 
-            this.btnGetAll.Location = new System.Drawing.Point(7, 147);
-            this.btnGetAll.Name = "btnGetAll";
-            this.btnGetAll.Size = new System.Drawing.Size(75, 23);
-            this.btnGetAll.TabIndex = 1;
-            this.btnGetAll.Text = "Get All";
-            this.btnGetAll.UseVisualStyleBackColor = true;
-            this.btnGetAll.Click += new System.EventHandler(this.btnGetAll_Click);
-            // 
-            // btnGetID
-            // 
-            this.btnGetID.Location = new System.Drawing.Point(88, 147);
-            this.btnGetID.Name = "btnGetID";
-            this.btnGetID.Size = new System.Drawing.Size(75, 23);
-            this.btnGetID.TabIndex = 2;
-            this.btnGetID.Text = "Get By ID";
-            this.btnGetID.UseVisualStyleBackColor = true;
-            this.btnGetID.Click += new System.EventHandler(this.btnGetID_Click);
-            // 
-            // num
-            // 
-            this.num.Location = new System.Drawing.Point(169, 150);
-            this.num.Name = "num";
-            this.num.Size = new System.Drawing.Size(76, 20);
-            this.num.TabIndex = 3;
-            // 
-            // lblIntro
-            // 
-            this.lblIntro.AutoSize = true;
-            this.lblIntro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIntro.Location = new System.Drawing.Point(0, 1);
-            this.lblIntro.Name = "lblIntro";
-            this.lblIntro.Size = new System.Drawing.Size(116, 24);
-            this.lblIntro.TabIndex = 4;
-            this.lblIntro.Text = "New Model";
-            // 
-            // lblFirstName
-            // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(4, 27);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(57, 13);
-            this.lblFirstName.TabIndex = 7;
-            this.lblFirstName.Text = "First Name";
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Location = new System.Drawing.Point(7, 43);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(100, 20);
-            this.txtFirstName.TabIndex = 8;
-            // 
-            // lblLastName
-            // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(4, 66);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(58, 13);
-            this.lblLastName.TabIndex = 9;
-            this.lblLastName.Text = "Last Name";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(7, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 10;
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(122, 66);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(78, 13);
-            this.lblPhone.TabIndex = 11;
-            this.lblPhone.Text = "Phone Number";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(125, 82);
-            this.maskedTextBox1.Mask = "(999) 000-0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(120, 20);
-            this.maskedTextBox1.TabIndex = 12;
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Location = new System.Drawing.Point(7, 108);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 13;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(125, 43);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 5;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(122, 27);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(18, 13);
-            this.lblID.TabIndex = 6;
-            this.lblID.Text = "ID";
-            // 
-            // radNew
-            // 
-            this.radNew.AutoSize = true;
-            this.radNew.Checked = true;
-            this.radNew.Location = new System.Drawing.Point(6, 5);
-            this.radNew.Name = "radNew";
-            this.radNew.Size = new System.Drawing.Size(47, 17);
-            this.radNew.TabIndex = 14;
-            this.radNew.TabStop = true;
-            this.radNew.Text = "New";
-            this.radNew.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.radNew);
-            this.groupBox1.Location = new System.Drawing.Point(122, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(131, 38);
-            this.groupBox1.TabIndex = 16;
-            this.groupBox1.TabStop = false;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(59, 5);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(60, 17);
-            this.radioButton1.TabIndex = 15;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Update";
-            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -256,21 +102,129 @@
             this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
             this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
             // 
+            // bindingTestData
+            // 
+            this.bindingTestData.DataSource = typeof(TestBusinessLogic.Models.TestModel);
+            // 
+            // btnGetAll
+            // 
+            this.btnGetAll.Location = new System.Drawing.Point(7, 84);
+            this.btnGetAll.Name = "btnGetAll";
+            this.btnGetAll.Size = new System.Drawing.Size(75, 23);
+            this.btnGetAll.TabIndex = 1;
+            this.btnGetAll.Text = "Get &All";
+            this.btnGetAll.UseVisualStyleBackColor = true;
+            this.btnGetAll.Click += new System.EventHandler(this.btnGetAll_Click);
+            // 
+            // btnGetID
+            // 
+            this.btnGetID.Location = new System.Drawing.Point(88, 84);
+            this.btnGetID.Name = "btnGetID";
+            this.btnGetID.Size = new System.Drawing.Size(75, 23);
+            this.btnGetID.TabIndex = 2;
+            this.btnGetID.Text = "Get By &ID";
+            this.btnGetID.UseVisualStyleBackColor = true;
+            this.btnGetID.Click += new System.EventHandler(this.btnGetID_Click);
+            // 
+            // num
+            // 
+            this.num.Location = new System.Drawing.Point(169, 87);
+            this.num.Name = "num";
+            this.num.Size = new System.Drawing.Size(76, 20);
+            this.num.TabIndex = 3;
+            // 
+            // lblFirstName
+            // 
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Location = new System.Drawing.Point(4, 27);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(57, 13);
+            this.lblFirstName.TabIndex = 7;
+            this.lblFirstName.Text = "First Name";
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.Location = new System.Drawing.Point(7, 43);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(100, 20);
+            this.txtFirstName.TabIndex = 8;
+            // 
+            // lblLastName
+            // 
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Location = new System.Drawing.Point(117, 27);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(58, 13);
+            this.lblLastName.TabIndex = 9;
+            this.lblLastName.Text = "Last Name";
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.Location = new System.Drawing.Point(120, 43);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(100, 20);
+            this.txtLastName.TabIndex = 10;
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Location = new System.Drawing.Point(230, 27);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(78, 13);
+            this.lblPhone.TabIndex = 11;
+            this.lblPhone.Text = "Phone Number";
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Location = new System.Drawing.Point(233, 43);
+            this.txtPhone.Mask = "(999) 000-0000";
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(120, 20);
+            this.txtPhone.TabIndex = 12;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(378, 43);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 13;
+            this.btnSubmit.Text = "&Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // lblIntro
+            // 
+            this.lblIntro.AutoSize = true;
+            this.lblIntro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIntro.Location = new System.Drawing.Point(0, 1);
+            this.lblIntro.Name = "lblIntro";
+            this.lblIntro.Size = new System.Drawing.Size(116, 24);
+            this.lblIntro.TabIndex = 4;
+            this.lblIntro.Text = "New Model";
+            // 
+            // lblRetreiving
+            // 
+            this.lblRetreiving.AutoSize = true;
+            this.lblRetreiving.Location = new System.Drawing.Point(451, 94);
+            this.lblRetreiving.Name = "lblRetreiving";
+            this.lblRetreiving.Size = new System.Drawing.Size(147, 13);
+            this.lblRetreiving.TabIndex = 14;
+            this.lblRetreiving.Text = "Retreiving Data. Please Wait.";
+            this.lblRetreiving.Visible = false;
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(355, 359);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(598, 297);
+            this.Controls.Add(this.lblRetreiving);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.lblPhone);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.lblFirstName);
-            this.Controls.Add(this.lblID);
-            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.lblIntro);
             this.Controls.Add(this.num);
             this.Controls.Add(this.btnGetID);
@@ -278,13 +232,10 @@
             this.Controls.Add(this.gridModels);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormTest";
-            this.Text = "Test";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.gridModels)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingTestData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,23 +248,19 @@
         private System.Windows.Forms.Button btnGetAll;
         private System.Windows.Forms.Button btnGetID;
         private System.Windows.Forms.NumericUpDown num;
-        private System.Windows.Forms.Label lblIntro;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label lblLastName;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label lblPhone;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txtPhone;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.RadioButton radNew;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblIntro;
+        private System.Windows.Forms.Label lblRetreiving;
     }
 }
 

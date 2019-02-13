@@ -1,5 +1,4 @@
-﻿using ProtoBuf;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace TestBusinessLogic.Models
 {
@@ -46,7 +45,7 @@ namespace TestBusinessLogic.Models
         /// <returns></returns>
         public override bool Equals(object obj)
         {
-            if (obj == null || ! this.GetType().Equals(obj.GetType()))
+            if (obj == null || !this.GetType().Equals(obj.GetType()))
                 return false;
             else
             {
