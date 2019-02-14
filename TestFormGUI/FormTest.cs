@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.SignalR.Client;
+using Serialization;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,12 +17,12 @@ namespace TestFormGUI
         #region Properties and Fields
         // Set the hub values before continuing.
         // The hub could potentially be injected, but this is a small application, so I don't feel it necessary.
-        private const string _hubURI = "http://localhost:2681";
+        private const string _hubURI = "http://localhost:2681/";
         private const string _hubName = "Test";
         private static readonly HubConnection _connection = new HubConnection(_hubURI);
         private static readonly IHubProxy _hub = _connection.CreateHubProxy(_hubName);
 
-        private BindingList<TestModel> gridData = new BindingList<TestModel>();
+        private BindingList<TestModel> data = new BindingList<TestModel>();
         #endregion
 
         #region Construction and Initialization
@@ -33,13 +34,14 @@ namespace TestFormGUI
             // I'm typically going to be the only user. 
             InitializeHub();
             InitializeData();
-            bindingTestData.DataSource = gridData;
+            bindingTestData.DataSource = data;
         }
 
         private async void InitializeHub()
         {
             // Subscribe to hub events
-
+            _hub.On<byte[]>("AddTestModel", model => this.Invoke(new MethodInvoker(() => { addTestModel(model); })));
+            _hub.On<int>("RemoveTestModel", modelID => this.Invoke(new MethodInvoker(() => { removeTestModel(modelID); })));
             // Start the Hub. Using a task to synchronously 
             await _connection.Start();
         }
@@ -83,22 +85,28 @@ namespace TestFormGUI
 
             //Since the binding list only manipulates one item at a time...
             // Reset the list by removing everything.
-            while (gridData.Count > 0)
-                gridData.Remove(gridData[0]);
+            while (data.Count > 0)
+                data.Remove(data[0]);
             // Add all the current items from 
             foreach (TestModel model in await RESTClient.Instance.GetTestModelsAsync())
-                gridData.Add(model);
+                data.Add(model);
 
             lblRetreiving.Visible = false;
         }
 
         private TestModel getFormTestModel() => new TestModel()
         {
-            ID = gridData.Max(m => m.ID) + 1,
+            ID = data.Max(m => m.ID) + 1,
             FirstName = txtFirstName.Text,
             LastName = txtLastName.Text,
             PhoneNumber = txtPhone.Text
         };
+
+        private void addTestModel(byte[] model) =>
+            data.Add(ProtoSerializer.Deserialize<TestModel>(model));
+
+        private void removeTestModel(int id) =>
+            data.Remove(data.Where(d => d.ID == id).FirstOrDefault());
         #endregion
     }
 }

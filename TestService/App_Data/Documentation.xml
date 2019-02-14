@@ -680,5 +680,39 @@
             The ready accessor of all repositories.
             </summary>
         </member>
+        <member name="T:TestService.SignalRHubs.Interfaces.ITestHub">
+            <summary>
+            Interface to allow for strong typing on implementing SignalR hubs
+            </summary>
+        </member>
+        <member name="M:TestService.SignalRHubs.Interfaces.ITestHub.AddTestModel(TestBusinessLogic.Models.TestModel)">
+            <summary>
+            Add the given test model to 
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:TestService.SignalRHubs.Interfaces.ITestHub.RemoveTestModel(System.Int32)">
+            <summary>
+            Remove a test model by the given ID
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:TestService.SignalRHubs.TestHub">
+            <summary>
+            A SignalR hub for broadcasting to all subscribed clients
+            </summary>
+        </member>
+        <member name="M:TestService.SignalRHubs.TestHub.AddTestModel(System.Byte[])">
+            <summary>
+            Broadcasts to all connected clients to add the specified TestModel.
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:TestService.SignalRHubs.TestHub.RemoveTestModel(System.Int32)">
+            <summary>
+            Broadcasts to all connected clients that the specified TestModel should be removed.
+            </summary>
+            <param name="id"></param>
+        </member>
     </members>
 </doc>

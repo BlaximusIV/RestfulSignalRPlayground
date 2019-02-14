@@ -99,6 +99,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Serialization\Serialization.csproj">
+      <Project>{7020E264-322E-46F6-BCA3-AC753CDBB978}</Project>
+      <Name>Serialization</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestBusinessLogic\TestBusinessLogic.csproj">
       <Project>{7B2D0976-2727-488B-BE89-CF14E737FFD0}</Project>
       <Name>TestBusinessLogic</Name>

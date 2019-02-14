@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNet.SignalR;
+using Serialization;
+using System.Collections.Generic;
 using System.Web.Http;
 using TestBusinessLogic.Models;
 using TestService.DataAccess.Interfaces;
+using TestService.SignalRHubs;
 
 namespace TestService.Controllers
 {
@@ -32,7 +35,11 @@ namespace TestService.Controllers
         /// </summary>
         /// <param name="model"></param>
         // POST api/<controller>
-        public void Post([FromBody]TestModel model) => _repo.InsertModel(model);
+        public void Post([FromBody]TestModel model)
+        {
+            _repo.InsertModel(model);
+            TestHub.AddTestModel(ProtoSerializer.Serialize(model));
+        }
 
         /// <summary>
         /// Upserts the given model to the repository
@@ -47,6 +54,10 @@ namespace TestService.Controllers
         /// </summary>
         /// <param name="id"></param>
         // DELETE api/<controller>/5
-        public void Delete(int id) => _repo.DeleteModel(id);
+        public void Delete(int id)
+        {
+            _repo.DeleteModel(id);
+            TestHub.RemoveTestModel(id);
+        }
     }
 }
